@@ -13,6 +13,14 @@
         type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Contact</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("ui8kGY2PrPJsqNjFr");
+        })();
+    </script>
 </head>
 
 <body>
@@ -67,22 +75,17 @@
                 <h5 class="uppercase text-center">Let's work together!</h5>
 
                 <div class="center-form">
-                    <form>
+                    <form onsubmit="return sendMail(this);">
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required>
-                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Name"
-                            required>
+                        <input type="email" name="emailaddress" id="emailaddress class=" class="form-control"
+                            placeholder="Email" required>
                         <textarea name="projectsummary" id="projectsummary" class="form-control"
                             placeholder="Project description" rows="5" required></textarea>
-                        <div class="form-row text-center">
-                            <div class="col">
-                                <button type="submit" class="btn btn-secondary">Send Project Request</button>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn btn-secondary center-block">Send Project Request</button>
                     </form>
                 </div>
             </div>
         </div>
-
     </section>
     <footer class="container-fluid">
         <div id="footer-details" class="row">
@@ -141,7 +144,7 @@
         </div>
 
     </footer>
-
+    <script src="assets/js/sendEmail.js"></script>
 </body>
 
 </html>
